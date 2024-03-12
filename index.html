@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UI API </title>
+        <link rel ="icon" type ="image/x-icon" href="./assets/favicon.png">
+    </head>
+
+     <body>    
+        <h1>UI API</h1>
+        <p>This is an API for the UI. It allows the user to create complex API system using a few simple predefined components that are easily expendable.</p>
+        
+        <h2>Simple API Usage Examples</h2>
+        
+        <a href="text_example.html">Text Example</a>
+        <p>This shows an example use case to creating text using prefab helpers and directly using a UI Object.</p>
+        
+        <a href="button_example.html">Button Example</a>
+        <p>This shows an example use case of buttons and binding different click actions.</p>
+
+        <a href="dropdown_example.html">Dropdown Example</a>
+        <p>This shows an example use case of a dropdown and a text that reflects based on the selected choice in the dropdown.</p>
+
+        <a href="toggle_example.html">Toggle Example</a>
+        <p>This shows an example use case of a toggle buttons.</p>
+        
+        <h2>Complex API Usage Examples</h2>
+        
+        
+        <a href="buy_menu_example.html">A Buy Menu Example</a>
+        <p> A Fallout like buy menu where the player buys items from the shop</p>
+
+        <a href="music_player.html">Music Player Example</a>
+        <p> This is a demonsration how this UI API could be used for non video game applications, like music listener app.</p>
+        
+        <a href="camera_move_example.html">Simple Game Mock</a>
+        <p> This game Mock showcases all existing UI elements</p>
+        
+        
+
+        <h2>Using the API</h2>
+
+        <h3>Canvas</h3>
+        <p>Canvas is an abstraction of the UI layer. Every UI Object that needs to be drawn must be added to the canvas first</p>
+
+        <h3>UI Prefab</h3>
+        <p>This is a collection of helper methods to facilitate faster UI creation. Currently CreateText and CreateButton help the user create a complex objects in a few lines of code</p>
+
+        <h3>UI Object</h3>
+        <p>A UIObject is the simplest UI element, it takes in a renderable, and is capable of drawing that renderable</p>
+        
+        <h3>Clickable UI Object</h3>
+        <p>A UIObject that is capable of handling a click event. This class assumes that the renderable it uses will have an accurate position and size to be used as a button.</p>
+
+        <h3>UI Object Collection</h3>
+        <p>A collection of UI Object all being drawn together</p>
+        
+        <h3>UI Dropdown</h3>
+        <p>A UIObject that is a drop down, and the user can select between multiple choices</p>
+        
+        <h3>UI Toggle</h3>
+        <p>A UIObject that is a toggle, it will cycle through all the given choices</p>
+        
+
+    </body>
+</html>
