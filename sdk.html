@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UI API </title>
+        <link rel ="icon" type ="image/x-icon" href="./assets/favicon.png">
+    </head>
+
+     <body>    
+        
+        <h1>SDK Documentation</h1>
+
+        <p>The Entire API is inside the "UIAPI" Folder under src/engine/UIAPI</p>
+        
+        
+        <br><a href="index.html">Go Back</a>
+        
+        <hr>
+
+        <h2>Canvas</h2>
+        <p>Canvas is an abstraction of the UI layer. Every UI Object that needs to be drawn must be added to the canvas first.</p>
+        <p>Canvas size is preset at 1280,720. To support games of different canvas sizes, the canvas.js file needs to be modified.</p>
+        
+        <h3>addToCanvas(UIObject)</h3>
+        <p>Add the UI Object to the canvas. Canvas will know when handle drawing it and updating it.</p>
+        
+
+        <h3>draw()</h3>
+        <p>Draw the canvas and all the attached elements. Must be called last, after all the other draw calls</p>
+
+        <h3>update()</h3>
+        <p>Update the canvas and all the attached elements. This function is required for buttons and interactions to work.</p>
+        
+        <hr>
+        <!------->
+        
+        <h2>UI Prefab</h2>
+        <p>This is a collection of helper methods to facilitate faster UI creation. Currently CreateText and CreateButton help the user create a complex objects in a few lines of code</p>
+
+        <h3>CreateText(x, y, textContents, textHeight)</h3>
+        <p>Create a UI text object that says "textContents" at position (x,y) with font of size equal to "textHeight". </p>
+        <p>To modify what the text says, use object.mRenderable, to access the font renderable, from which the function setText() may be used</p>
+
+        <h3>CreateButton(x, y, width, height, text, eventCaller, event)</h3>
+        <p>Create a UI button object that is label with "text" at position (x,y) and size (width,height).</p>
+        <p>When the button is clicked, it will call the function "event" from the context of the "eventCaller"</p>
+        
+
+        <hr>
+        <!------->
+
+        <h2>UI Object</h2>
+        <p>A UIObject is the simplest UI element, it takes in a renderable, and is capable of drawing that renderable on the canvas</p>
+
+        <h3>constructor(renderable)</h3>
+        <p>Create a UI Object with the passed renderable as the object that is drawn in the canvas</p>
+        
+        <hr>
+        <!------->
+
+        <h2>Clickable UI Object</h2>
+        <p>A UIObject that is capable of handling a click event. This class assumes that the renderable it uses will have an accurate position and size to be used as a button.</p>
+
+        <h3>constructor(renderable)</h3>
+        <p>Create a Clickable UI Object with the passed renderable as the object that is drawn in the canvas</p>
+
+        <h3>setClickEvent(eventCaller, clickEvent)</h3>
+        <p>Set the event that is called when the button is clicked. The clickEvent is the method that is called on click, the eventCaller is the object that calls the method.</p>
+
+        <h3>setNormalColor(color)</h3>
+        <p>Set the inactive color, when the button is not hovered or clicked</p>
+
+        <h3>setHoverColor(color)</h3>
+        <p>Set the hover color, when the cursor is hovered over the button</p>
+
+        <h3>setClickColor(color)</h3>
+        <p>Set the click color, when the button was just clicked</p>
+
+        <hr>
+        <!------->
+
+        <h2>UI Object Collection</h2>
+        <p>A collection of UI Object all being drawn together</p>
+        
+        <h3>addToCollection(UIObject)</h3>
+        <p>Adds the UIObject to this collection of UI Objects </p>
+
+        <hr>
+        <!------->
+        
+        <h2>UI Dropdown</h2>
+        <p>A UIObject that is a drop down, and the user can select between multiple choices</p>
+        
+        <h3>constructor(choices, x, y, width, height)</h3>
+        <p>Create a drop down at position (x,y) where each option is of size (width,height)</p>
+        <p>The choices must be a non empty string array of all the choices that the user can select from</p>
+        
+        <h3>getCurrentlySelected()</h3>
+        <p>Retrieve the index of the currently selected choice</p>
+        
+        
+        <hr>
+        <!------->
+
+        <h2>UI Toggle</h2>
+        <p>A UIObject that is a toggle, a special type of button that will cycle through all the given choices</p>
+
+        <h3>constructor(choices, x, y, width, height)</h3>
+        <p>Create a toggle button at position (x,y) which is of size (width,height)</p>
+        <p>The choices must be a non empty string array of all the choices that the user can cycle from</p>
+        
+        <h3>getCurrentlySelected()</h3>
+        <p>Retrieve the index of the currently selected choice</p>
+
+        <hr>
+        <!------->
+
+
+        <br><a href="index.html">Go Back</a>
+    </body>
+</html>
